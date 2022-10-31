@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ review.film_title }}</h1>
+    <img src="{{ review.poster.url }}" alt="">
+    <p>{{ review.review_text }}</p>
+    <p>{{ review.rating }}</p>
+    <p>{{ review.publish_date_pretty }}</p>
+    <p>{{ review.publisher.username }}</p>
+    
+{% endblock %}

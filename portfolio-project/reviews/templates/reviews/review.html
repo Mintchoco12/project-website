@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Reviews</h1>
+{% for review in reviews.all %}
+    <h2>{{ review.film_title }}</h2>
+    <a href="reviews/{{review.id}}">
+        <img src="{{ review.poster.url }}">
+    </a>
+    <p>{{ review.summary }}</p>
+    <p>{{ review.rating }}</p>
+    <p>{{ review.publish_date_pretty }}</p>
+    <p>{{ review.publisher }}</p>
+{% endfor %}
+
+{% endblock %}

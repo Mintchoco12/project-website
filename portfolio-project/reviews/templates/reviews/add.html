@@ -1,0 +1,26 @@
+{% extends 'base.html  %'}
+
+{% block content %}
+
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+
+<h1>Writing reviews</h1>
+
+<form class="" action="{% url 'create' %}" method="POST"
+enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Film Title</p>
+    <input type="text" name="film-title" /><br>
+    <p>Review</p>
+    <input type="text" name="review-text" /><br>
+    <p>Rating</p>
+    <input type="number" name="rating" min="1" max="5"/><br>
+    <p>Poster</p>
+    <input type="file" name="poster" accept="image/jpeg" /><br>
+    <input type="submit" value="add" />
+</form>
+{% endblock %}
